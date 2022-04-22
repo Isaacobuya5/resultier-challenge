@@ -20,3 +20,18 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /** background color **/
+  --background-gradient: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  /** items colors **/
+}
+
+@layer base {
+  body {
+    @apply font-Barlow;
+    background: var(--background-gradient);
+    text-align: center;
+    color: #fff;
+  }
+}

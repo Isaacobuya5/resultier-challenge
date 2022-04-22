@@ -21,12 +21,14 @@ module.exports = {
       darkText: "hsl(229, 25%, 31%)",
       scoreText: "hsl(229, 64%, 46%)",
       headerOutline: "hsl(217, 16%, 45%)",
-      radialGradientFrom: "hsl(214, 47%, 23%)",
-      radialGradientTo: "hsl(237, 49%, 15%)",
     },
     screens: {
       mobile: "375px",
       desktop: "1366px",
+    },
+    backgroundColor: {
+      backgroundGradient:
+        "radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
     },
   },
   plugins: [],
