@@ -1,6 +1,6 @@
-function Header() {
+function Header({ score }) {
   return (
-    <div>Header</div>
+    <div>Score: {score}</div>
   )
 }
 

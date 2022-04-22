@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect } from "react";
 function Game({ score, userChoice, setScore }) {
   const [house, setHouse] = useState("");
@@ -48,6 +49,9 @@ function Game({ score, userChoice, setScore }) {
       {playerMin == "win" && <h2>You Win</h2>}
       {playerMin == "lose" && <h2>You Lose</h2>}
       {playerMin == "draw" && <h2>Draw</h2>}
+      <Link href="/play" onClick={() => setHouse()}>
+        Play again
+      </Link>
     </div>
   );
 }
