@@ -1,7 +1,6 @@
-function Play() {
-  return (
-    <div>Play</div>
-  )
+function Play(props) {
+  console.log(props);
+  return <div>Play</div>;
 }
 
-export default Play
+export default Play;
