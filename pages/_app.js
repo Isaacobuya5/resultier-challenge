@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }) {
         setUserChoice={setUserChoice}
         userChoice={userChoice}
         score={score}
+        setScore={setScore}
       />
       <Footer />
     </Fragment>
