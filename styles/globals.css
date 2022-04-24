@@ -24,6 +24,8 @@ a {
 :root {
   /** background color **/
   --background-gradient: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  --dark-text-color: hsl(229, 25%, 31%);
+  --rock-gradient: hsl(349, 71%, 52%);
   /** items colors **/
 }
 
@@ -32,7 +34,33 @@ a {
     @apply font-Barlow;
     background: var(--background-gradient);
     text-align: center;
-    color: #fff;
+    /* color: #fff; */
     font-size: 1.5rem;
+  }
+
+  .image {
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+
+  .rock {
+    box-shadow: inset 0px 5px 6px grey,  0px 8px darken(var(--rock-gradient), 15%),
+    0px 8px 0px 50px rgba(255, 255, 255, .07),
+    0px 8px 0px 100px rgba(255, 255, 255, .05),
+    0px 8px 0px 150px rgba(255, 255, 255, .025);
+  }
+
+  .result a {
+    display: block;
+    padding: .3rem 1rem;
+    background: #fff;
+    color: var(--dark-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  .result a:hover {
+    color: red;
   }
 }

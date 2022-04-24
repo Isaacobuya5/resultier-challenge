@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   const [score, setScore] = useState(0);
 
   return (
-    <Fragment>
+    <div className="flex flex-col mx-auto min-h-screen">
       <Header score={score} />
       <Component
         {...pageProps}
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         setScore={setScore}
       />
       <Footer />
-    </Fragment>
+    </div>
   );
 }
 
