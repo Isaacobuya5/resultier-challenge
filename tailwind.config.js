@@ -10,19 +10,20 @@ module.exports = {
     extend: {
       colors: {
         scissorsGradientFrom: "hsl(39, 89%, 49%)",
-        scissorsGradientTo: "hsl(40, 84%, 53%)",
+        scissorsGradientTo: "var(--scissor-gradient-darken)",
         paperGradientFrom: "hsl(230, 89%, 62%)",
-        paperGradientTo: "hsl(230, 89%, 65%)",
+        paperGradientTo: "var(--paper-gradient-darken)",
         rockGradientFrom: "hsl(349, 71%, 52%)",
-        rockGradientTo: "hsl(349, 70%, 56%)",
+        rockGradientTo: "var(--rock-gradient-darken)",
         lizardGradientFrom: "hsl(261, 73%, 60%)",
         lizardGradientTo: "hsl(261, 72%, 63%)",
         cyanGradientFrom: "hsl(189, 59%, 53%)",
         cyanGradientTo: "hsl(189, 58%, 57%)",
-        darkText: "hsl(229, 25%, 31%)",
+        darkText: "var(--dark-text-color)",
         scoreText: "hsl(229, 64%, 46%)",
         headerOutline: "hsl(217, 16%, 45%)",
         counterBg: "rgba(0, 0, 0, 0.3)",
+        modalOverlay: "rgba(0, 0, 0, 0.5)",
       },
     },
     screens: {
@@ -34,10 +35,6 @@ module.exports = {
       scissorsIcon: "url('../public/images/icon-scissors.svg')",
       rockIcon: "url('../public/images/icon-rock.svg')",
     },
-    // backgroundColor: {
-    //   backgroundGradient:
-    //     "radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
-    // },
   },
   plugins: [],
 };

@@ -6,6 +6,7 @@ function Game({ score, userChoice, setScore }) {
   const [house, setHouse] = useState("");
   const [playerMin, setPlayerMin] = useState("");
   const [counter, setCounter] = useState(3);
+  const [playerWon, setPlayerWon] = useState(false);
 
   const newHousePick = () => {
     const choices = ["rock", "paper", "scissors"];
@@ -56,10 +57,14 @@ function Game({ score, userChoice, setScore }) {
   }, [counter, house]);
 
   return (
-    <div className="p-6 flex justify-between items-center mx-auto  mt-20 flex-wrap desktop:flex-nowrap">
+    <div className="relative mb-6 flex justify-between items-center mx-auto  mt-20 flex-wrap desktop:flex-nowrap">
       <div className="flex flex-col desktop:flex-col-reverse mr-1">
-        <DisplayedChoice choice={userChoice} />
-        <span className="text-white text-sm uppercase block mt-2 desktop:mt-0 desktop:mb-3">
+        <DisplayedChoice
+          choice={userChoice}
+          player={"user"}
+          playerMin={playerMin}
+        />
+        <span className="text-white text-sm uppercase block mt-4 desktop:mt-0 desktop:mb-3">
           You Picked {userChoice}
         </span>
         {/* <div className="icon icon-paper"></div> */}
@@ -87,7 +92,7 @@ function Game({ score, userChoice, setScore }) {
       )}
       {playerMin == "draw" && (
         <div className="result flex flex-col justify-center uppercase items-center order-3  mobile:w-full mt-4">
-          <span className="text-4xl font-bold text-white mb-2 block">Draw</span>
+          <span className="text-5xl font-bold text-white mb-2 block">Draw</span>
           <Link href="/play" onClick={() => setHouse()}>
             Play again
           </Link>
@@ -96,13 +101,24 @@ function Game({ score, userChoice, setScore }) {
 
       <div className="flex flex-col desktop:flex-col-reverse desktop:order-4">
         {counter == 0 ? (
-          <DisplayedChoice choice={house} />
+          <DisplayedChoice
+            choice={house}
+            player={"house"}
+            playerMin={playerMin}
+          />
         ) : (
-          <div style={{ width: "140px", height: "140px" }} className="rounded-full flex items-center justify-center bg-counterBg">{counter}</div>
+          <div
+            style={{ width: "140px", height: "140px" }}
+            className="rounded-full flex items-center self-center justify-center bg-counterBg"
+          >
+            {counter}
+          </div>
         )}
-        <span className="text-white text-sm uppercase block mt-2 desktop:mt-0 desktop:mb-3">
-          The house Picked {house}
-        </span>
+        {counter == 0 ? (
+          <span className="text-white text-sm uppercase block mt-4 desktop:mt-0 desktop:mb-3">
+            The house Picked {house}
+          </span>
+        ) : null}
       </div>
     </div>
   );

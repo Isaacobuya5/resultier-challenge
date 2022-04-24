@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   const [score, setScore] = useState(0);
 
   return (
-    <div className="flex flex-col mx-auto min-h-screen">
+    <div className="flex flex-col p-6 min-h-full overflow-y-auto">
       <Header score={score} />
       <Component
         {...pageProps}
