@@ -5,6 +5,7 @@ import DisplayedChoice from "../components/DisplayedChoice";
 function Game({ score, userChoice, setScore }) {
   const [house, setHouse] = useState("");
   const [playerMin, setPlayerMin] = useState("");
+  const [counter, setCounter] = useState(3);
 
   const newHousePick = () => {
     const choices = ["rock", "paper", "scissors"];
@@ -42,8 +43,17 @@ function Game({ score, userChoice, setScore }) {
   };
 
   useEffect(() => {
-    Result();
-  }, [house]);
+    const timer =
+      counter > 0
+        ? setInterval(() => {
+            setCounter(counter - 1);
+          }, 1000)
+        : Result();
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [counter, house]);
 
   return (
     <div className="p-6 flex justify-between items-center mx-auto  mt-20 flex-wrap desktop:flex-nowrap">
@@ -85,7 +95,11 @@ function Game({ score, userChoice, setScore }) {
       )}
 
       <div className="flex flex-col desktop:flex-col-reverse desktop:order-4">
-        <DisplayedChoice choice={house} />
+        {counter == 0 ? (
+          <DisplayedChoice choice={house} />
+        ) : (
+          <div style={{ width: "140px", height: "140px" }} className="rounded-full flex items-center justify-center bg-counterBg">{counter}</div>
+        )}
         <span className="text-white text-sm uppercase block mt-2 desktop:mt-0 desktop:mb-3">
           The house Picked {house}
         </span>

@@ -22,6 +22,7 @@ module.exports = {
         darkText: "hsl(229, 25%, 31%)",
         scoreText: "hsl(229, 64%, 46%)",
         headerOutline: "hsl(217, 16%, 45%)",
+        counterBg: "rgba(0, 0, 0, 0.3)",
       },
     },
     screens: {
